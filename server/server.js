@@ -6,7 +6,7 @@ let users = []; // Array to track connected users
 
 wss.on('connection', function connection(ws) {
     console.log('A user connected');
-    
+    console.log(ws.upgradeReq.connection.remoteAddress);
     // Assign user ID (User A or User B)
     const userId = users.length === 0 ? 'A' : 'B';
     ws.send(JSON.stringify({ userId })); // Send user ID to the connected user
@@ -36,5 +36,4 @@ wss.on('connection', function connection(ws) {
     });
 });
 console.log('Altered:');
-console.log(wss.upgradeReq.connection.remoteAddress);
 console.log('WebSocket server started on ws://localhost:8080');
