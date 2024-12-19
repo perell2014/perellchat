@@ -1,6 +1,6 @@
 // server.js
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 8080 });
+const wss = new WebSocket.Server({ port: 80 });
 
 let users = []; // Array to track connected users
 
