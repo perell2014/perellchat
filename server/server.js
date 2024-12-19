@@ -1,6 +1,6 @@
 // server.js
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 80 });
+const wss = new WebSocket.Server({ port: 3000 });
 
 let users = []; // Array to track connected users
 
@@ -35,5 +35,5 @@ wss.on('connection', function connection(ws) {
         users = users.filter(user => user !== ws); // Remove the disconnected user
     });
 });
-console.log('Altered:');
+console.log('Altered: 3000');
 console.log('WebSocket server started on ws://localhost:8080');
