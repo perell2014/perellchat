@@ -1,6 +1,23 @@
+
+//test
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4000;
+
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 // server.js
+/*
+const portUU = process.env.PORT || 3000;
+
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: 3000 });
+const wss = new WebSocket.Server({ port: portUU });
 
 let users = []; // Array to track connected users
 
@@ -37,3 +54,4 @@ wss.on('connection', function connection(ws) {
 });
 console.log('Altered: 3000');
 console.log('WebSocket server started on ws://localhost:8080');
+*/
