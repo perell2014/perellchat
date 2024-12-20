@@ -7,6 +7,19 @@ const os = require('os');
 
 const portUU = process.env.PORT1 || 3000;
 
+// Get local IP address
+function getLocalIp() {
+  const interfaces = os.networkInterfaces();
+  for (const name of Object.keys(interfaces)) {
+    for (const iface of interfaces[name]) {
+      if (iface.family === 'IPv4' && !iface.internal) {
+        return iface.address;
+      }
+    }
+  }
+  return 'localhost';
+}
+
 // Create an HTTP server
 const server = http.createServer((req, res) => {
   if (req.method === 'GET' && req.url === '/') {
