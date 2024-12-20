@@ -14,7 +14,7 @@ app.listen(port, () => {
 
 // server.js
 
-const portUU = process.env.PORT || 3000;
+const portUU = process.env.PORT1 || 3000;
 
 const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: portUU });
