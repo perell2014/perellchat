@@ -1,3 +1,55 @@
+//test 2
+const http = require('http');
+const WebSocket = require('ws');
+const fs = require('fs');
+const path = require('path');
+
+const portUU = process.env.PORT1 || 3000;
+
+// Create an HTTP server
+const server = http.createServer((req, res) => {
+  if (req.method === 'GET' && req.url === '/') {
+    // Serve the HTML file
+    const htmlFilePath = path.join(__dirname, 'index.html');
+    fs.readFile(htmlFilePath, (err, data) => {
+      if (err) {
+        res.writeHead(500);
+        res.end('Error loading index.html');
+      } else {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(data);
+      }
+    });
+  } else {
+    res.writeHead(404);
+    res.end();
+  }
+});
+
+// Create a WebSocket server
+const wss = new WebSocket.Server({ server });
+
+wss.on('connection', socket => {
+  console.log('Client connected');
+
+  socket.on('message', message => {
+    console.log(`Received: ${message}`);
+    socket.send(`Server received: ${message}`);
+  });
+
+  socket.on('close', () => {
+    console.log('Client disconnected');
+  });
+});
+
+// Start the HTTP server
+const PORT = process.env.PORT1 || 3000;
+server.listen(PORT, () => {
+  const localIp = getLocalIp();
+  console.log(`Server is running on http://${localIp}:${PORT}`);
+  console.log(`WebSocket server is running on ws://${localIp}:${PORT}`);
+});
+
 /*
 //test
 const express = require('express')
@@ -13,7 +65,7 @@ app.listen(port, () => {
 })*/
 
 // server.js
-
+/*
 const portUU = process.env.PORT1 || 3000;
 
 const WebSocket = require('ws');
@@ -52,6 +104,7 @@ wss.on('connection', function connection(ws) {
         users = users.filter(user => user !== ws); // Remove the disconnected user
     });
 });
+*/
 console.log(`Example server listening on port ${portUU}`)
 //console.log('WebSocket server started on ws://localhost:8080');
 
