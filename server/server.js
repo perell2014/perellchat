@@ -58,7 +58,7 @@ let users = []; // Array to track connected users
 
 wss.on('connection', socket => {
     console.log('A user connected');
-    console.log(socket.upgradeReq.connection.remoteAddress);
+    //console.log(socket.upgradeReq.connection.remoteAddress);
     // Assign user ID (User A or User B)
     const userId = users.length === 0 ? 'A' : 'B';
     socket.send(JSON.stringify({ userId })); // Send user ID to the connected user
