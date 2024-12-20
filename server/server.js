@@ -1,4 +1,4 @@
-
+/*
 //test
 const express = require('express')
 const app = express()
@@ -10,10 +10,10 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
+})*/
 
 // server.js
-/*
+
 const portUU = process.env.PORT || 3000;
 
 const WebSocket = require('ws');
@@ -52,6 +52,6 @@ wss.on('connection', function connection(ws) {
         users = users.filter(user => user !== ws); // Remove the disconnected user
     });
 });
-console.log('Altered: 3000');
-console.log('WebSocket server started on ws://localhost:8080');
-*/
+console.log(`Example server listening on port ${port}`)
+//console.log('WebSocket server started on ws://localhost:8080');
+
