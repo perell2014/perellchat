@@ -52,6 +52,6 @@ wss.on('connection', function connection(ws) {
         users = users.filter(user => user !== ws); // Remove the disconnected user
     });
 });
-console.log(`Example server listening on port ${port}`)
+console.log(`Example server listening on port ${portUU}`)
 //console.log('WebSocket server started on ws://localhost:8080');
 
