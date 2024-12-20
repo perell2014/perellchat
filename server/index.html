@@ -10,7 +10,7 @@
   <p id="status">Connecting...</p>
   <script>
     console.log()
-    const wsUrl = `ws://${window.location.hostname}:${window.location.port}`;
+    const wsUrl = `wss://${window.location.hostname}:${window.location.port}`;
     const socket = new WebSocket(wsUrl);
 
     socket.onopen = () => {
