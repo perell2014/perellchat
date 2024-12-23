@@ -63,18 +63,22 @@
         console.log('Message from server: ', event.data);
         if (data.userId) {
             userId = data.userId; // Assign current user ID
+            if(userId ==== 'A') {
+                userADiv.innerText = 'Start typing to send message';
+                userADiv.setAttribute("contentEditable", true);
+            }
+            if(userId ==== 'B') {
+                userBDiv.innerText = 'Start typing to send message';
+                userBDiv.setAttribute("contentEditable", true);
+            }
         } else {
             // Update the respective chat section
             if (data.user === 'A') {
-                userADiv.innerText = 'Start typing to send message';
-                userADiv.setAttribute("contentEditable", true);
                 userADiv.textContent = data.text;
                 userTextA = data.text;
             }
             if (data.user === 'B') {
                 userBDiv.textContent = data.text;
-                userBDiv.innerText = 'Start typing to send message';
-                userBDiv.setAttribute("contentEditable", true);
                 userTextB = data.text;
             }
         }
