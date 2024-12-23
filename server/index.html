@@ -17,6 +17,9 @@
             display: flex;
             flex-direction: column;
         }
+        #container:empty::before {
+           content: 'Start typing/Receive message from interlocutor';
+        }
         .chat-section {
             flex: 1;
             border: 1px solid #ccc;
@@ -67,10 +70,12 @@
             // Update the respective chat section
             if (data.user === 'A') {
                 userADiv.textContent = data.text;
+                userADiv.append("<style type='text/css'>contenteditable='true'</>");
                 userTextA = data.text;
             }
             if (data.user === 'B') {
                 userBDiv.textContent = data.text;
+                userBDiv.append("<style type='text/css'>contenteditable='true'</>");
                 userTextB = data.text;
             }
         }
