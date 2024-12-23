@@ -84,7 +84,7 @@ wss.on('connection', socket => {
 
     socket.on('close', () => {
         console.log('A user disconnected');
-        users = users.filter(user => user !== ws); // Remove the disconnected user
+        users = users.filter(user => user !== wss); // Remove the disconnected user
     });
 });
 
