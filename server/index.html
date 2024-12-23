@@ -1,11 +1,9 @@
-TMP INDEX
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time Chat</title>
+  <title>Real-Time Chat v1.2</title>
   <style>
         body, html {
             margin: 0;
@@ -86,7 +84,7 @@ TMP INDEX
         if (e.key === "Enter") {
             //Handle Enter key
             e.preventDefault();
-            newText += e.key;
+            newText += "\n";
         } else if (e.key === "Backspace") {
             // Handle backspace: Remove the last character
             newText = newText.slice(0, -1);
