@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time Chat v1.3</title>
+  <title>Real-Time Chat</title>
   <style>
         body, html {
             margin: 0;
@@ -16,7 +16,6 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            content: 'Start typing/Receive message from interlocutor';
         }
         .chat-section {
             flex: 1;
@@ -35,7 +34,7 @@
 <body>
   <h1 style="text-align: center;">Status</h1>
   <p id="status">Connecting...</p>
-  <h1 style="text-align: center;">Real-Time Chat</h1>
+  <h1 style="text-align: center;">Real-Time Chat v1.3</h1>
     <div id="container">
         <div id="userA" class="chat-section"></div>
         <div id="userB" class="chat-section"></div>
@@ -53,7 +52,7 @@
      // DOM Elements
     const userADiv = document.getElementById('userA');
     const userBDiv = document.getElementById('userB');
-
+    
     // Local text states
     let userTextA = "";
     let userTextB = "";
@@ -67,13 +66,15 @@
         } else {
             // Update the respective chat section
             if (data.user === 'A') {
-                userADiv.contentEditable = true;
+                userADiv.innerText = content: 'Start typing to send message';
+                userADiv.setAttribute("contentEditable", true);
                 userADiv.textContent = data.text;
                 userTextA = data.text;
             }
             if (data.user === 'B') {
                 userBDiv.textContent = data.text;
-                userBDiv.contentEditable = true;
+                userBDiv.innerText = content: 'Start typing to send message';
+                userBDiv.setAttribute("contentEditable", true);
                 userTextB = data.text;
             }
         }
