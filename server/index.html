@@ -65,21 +65,21 @@
             userId = data.userId; // Assign current user ID
             if(userId === 'A') {
                 userADiv.innerText = 'Start typing to send message';
-                userADiv.setAttribute("contentEditable", true);
+                //userADiv.setAttribute("contentEditable", true);
             }
             if(userId === 'B') {
                 userBDiv.innerText = 'Start typing to send message';
-                userBDiv.setAttribute("contentEditable", true);
+                //userBDiv.setAttribute("contentEditable", true);
             }
         } else {
             // Update the respective chat section
             if (data.user === 'A') {
-                userADiv.selectionStart = userADiv.selectionEnd = userADiv.value.length;
+                //userADiv.selectionStart = userADiv.selectionEnd = userADiv.value.length;
                 userADiv.textContent = data.text;
                 userTextA = data.text;
             }
             if (data.user === 'B') {
-                userBDiv.selectionStart = userBDiv.selectionEnd = userBDiv.value.length;
+                //userBDiv.selectionStart = userBDiv.selectionEnd = userBDiv.value.length;
                 userBDiv.textContent = data.text;
                 userTextB = data.text;
             }
