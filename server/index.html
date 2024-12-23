@@ -74,10 +74,12 @@
         } else {
             // Update the respective chat section
             if (data.user === 'A') {
+                userADiv.selectionStart = userADiv.selectionEnd = userADiv.value.length;
                 userADiv.textContent = data.text;
                 userTextA = data.text;
             }
             if (data.user === 'B') {
+                userBDiv.selectionStart = userBDiv.selectionEnd = userBDiv.value.length;
                 userBDiv.textContent = data.text;
                 userTextB = data.text;
             }
